@@ -6,6 +6,8 @@
     margin: 0px;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     }        
     #title{
     font-size: 36px; 
@@ -16,9 +18,13 @@
     color: rgb(0,0,0);    
     text-align: center;
     }
-    #response{
+    #shop{
+    position: fixed;
     background-color: rgb(53, 132, 66); 
     font-size: 30px;
+    right: 0px;
+    width: 500px;
+    height: 1500px;
     display: none;
     }    
     #helloButton{
@@ -31,16 +37,29 @@
     position: absolute;
     top: 130px;
     left: 16px;
-    background-color: #73AD21;
+    background-color: #873f8c;
+    }
+    #buttons{
+    background-color: #8f21ad;
+    height: 100%;
+    width: 35%;
+    }
+    #stats{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 35%;
+    background-color: #544b73;
+
     }
 
     </style>
     <script>
     function sayHello(){
-    if (document.getElementById("response").style.display=="block"){
-        document.getElementById("response").style.display="none";} 
-    else if (document.getElementById("response").style.display=="none")
-        {document.getElementById("response").style.display="block";}}
+    if (document.getElementById("shop").style.display=="block"){
+        document.getElementById("shop").style.display="none";} 
+    else if (document.getElementById("shop").style.display=="none")
+        {document.getElementById("shop").style.display="block";}}
     var clicks = 0;
     function hitcounter(){ clicks=clicks+1;
         document.getElementById("clicks").innerHTML=clicks;
@@ -48,11 +67,18 @@
     }
 
     </script>            
-    <h1 id="title">hello</h1>
         <body>
-            <button id="helloButton" onclick="sayHello()">Hello</button>
-            <button id="hitButton" onclick="hitcounter()">Hit me</button> 
-            <div id="clicks">0</div>
-            <div id="response" style="display: none;">This is a box</div>
+            <div id="stats">
+                <p id="clicks">0</p>
+            </div>
+            <div id="shop" style="display: none;">This is a box</div>
+            <div id="buttons">
+                <button id="helloButton" onclick="sayHello()">Hello</button>
+                <button id="hitButton" onclick="hitcounter()">Hit me</button>
+            </div>
+
+
+
+
         </body>
 </html>
