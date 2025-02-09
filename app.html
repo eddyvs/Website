@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
     <style>        
     .title{
     font-size: 36px; 
@@ -17,15 +18,35 @@
     position: absolute;
     border: 3px solid #73AD21;
     }
+    #Response {position:absolute;
+    left: 300px;
+    background-color: rgb(255, 255, 255); 
+    font-size: 30px;
+    bottom: 300px;
+    }
+    #hitButton {
+    top: 100px;
+    }
     </style>
-        <body>
-            <h1 class="title">hello</h1>
-            <button class="text"type="button" onclick="document.getElementById('Hi')" >
-                
-            </button>
-              <h1>hello</h1>  
-            </div>
-        </body>
- 
+    <script>
+    function sayHello(){
+    if (document.getElementById("Response").style.display=="block"){
+        document.getElementById("Response").style.display="none";} 
+    else if (document.getElementById("Response").style.display=="none")
+        {document.getElementById("Response").style.display="block";}}
+    var clicks = 0;
+    function hitcounter(){ clicks=clicks+1;
+        document.getElementById("clicks").innerHTML=clicks;
+    
+    }
 
+    </script>
+        <body>
+            <div id="Response" style="display: none;">This is a box</div>
+            <div id="clicks" style="left: 30px; bottom: 30px;">0</div>
+            <h1 class="title">hello</h1>
+            
+            <button type="button" onclick="sayHello()">Hello</button>
+            <button type="button" id="hitButton" onclick="hitcounter()">Hit me</button>
+        </body>
 </html>
