@@ -1,52 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html >
     
-    <style>        
-    .title{
+    <style>
+    html,body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    }        
+    #title{
     font-size: 36px; 
-    height: 60px;
-    width: 80%;
+    height: 50px;
     background-color: lightblue;
-    text-align: center; 
+    text-align: centerrgb(173, 230, 174);
     margin: auto;
     color: rgb(0,0,0);    
+    text-align: center;
     }
-    .text{
-    background-color: red;  
-    margin: auto;
-    padding: 10px;
-    position: absolute;
-    border: 3px solid #73AD21;
-    }
-    #Response {position:absolute;
-    left: 300px;
-    background-color: rgb(255, 255, 255); 
+    #response{
+    background-color: rgb(53, 132, 66); 
     font-size: 30px;
-    bottom: 300px;
+    display: none;
+    }    
+    #helloButton{
+    position: absolute;
+    top: 100px;
+    left: 16px;
+    background-color: #73AD21;
     }
     #hitButton {
-    top: 100px;
+    position: absolute;
+    top: 130px;
+    left: 16px;
+    background-color: #73AD21;
     }
+
     </style>
     <script>
     function sayHello(){
-    if (document.getElementById("Response").style.display=="block"){
-        document.getElementById("Response").style.display="none";} 
-    else if (document.getElementById("Response").style.display=="none")
-        {document.getElementById("Response").style.display="block";}}
+    if (document.getElementById("response").style.display=="block"){
+        document.getElementById("response").style.display="none";} 
+    else if (document.getElementById("response").style.display=="none")
+        {document.getElementById("response").style.display="block";}}
     var clicks = 0;
     function hitcounter(){ clicks=clicks+1;
         document.getElementById("clicks").innerHTML=clicks;
     
     }
 
-    </script>
+    </script>            
+    <h1 id="title">hello</h1>
         <body>
-            <div id="Response" style="display: none;">This is a box</div>
-            <div id="clicks" style="left: 30px; bottom: 30px;">0</div>
-            <h1 class="title">hello</h1>
-            
-            <button type="button" onclick="sayHello()">Hello</button>
-            <button type="button" id="hitButton" onclick="hitcounter()">Hit me</button>
+            <button id="helloButton" onclick="sayHello()">Hello</button>
+            <button id="hitButton" onclick="hitcounter()">Hit me</button> 
+            <div id="clicks">0</div>
+            <div id="response" style="display: none;">This is a box</div>
         </body>
 </html>
