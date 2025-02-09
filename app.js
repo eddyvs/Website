@@ -3,7 +3,7 @@ import fs from "fs"
 
 const server = createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  fs.createReadStream("/Users/edsonvs/Desktop/VScode/JS/Game/app.html").pipe(res)
+  fs.createReadStream("app.html").pipe(res)
 });
 
 server.listen(3000, '127.0.0.1', () => {
